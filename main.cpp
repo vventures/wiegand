@@ -24,6 +24,8 @@ int main( int argc, char** argv ) {
 
       if( vm.count("help") ) { std::cout << desc << std::endl; return -1; }
 
+     std::cout<<"Attempting to connect to device: '"<<device<<"' at "<<baud<<" baud\n";
+
       boost::asio::io_service main_ios;
       wiegand_client client( main_ios, device, baud );
 

@@ -4,6 +4,7 @@
 #include <string>
 #include <boost/bind.hpp>
 #include <boost/asio.hpp>
+#include <iostream>
 
 
 class wiegand_client {
@@ -88,11 +89,13 @@ class wiegand_client {
     boost::asio::serial_port m_sport;
     char                     m_in_msg[16];
 
-    std::string              m_device;
-    bool                     m_writing;
-    int                      m_cur_out_buf:1;
+ 
+	int                      m_cur_out_buf:1;
     std::vector<char>        m_out_buf[2];
-
+	
+    bool                     m_writing;
+	std::string              m_device;
+	
 };
 
 
